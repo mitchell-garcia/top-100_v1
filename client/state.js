@@ -4,8 +4,9 @@ var { createStore } = Redux;
 
 function reducer(state = [], action) {
 	switch (action.type) {
-		case 'DATA_UPDATE' :
-			return state.albums = actions.text;
+		case 'DATA_FETCH' :
+			console.log(action.namespace);
+			return state[action.namespace] = action.data;
 		case 'CLICK_LOGO' :
 			console.log('clicklogo');
 			return state;

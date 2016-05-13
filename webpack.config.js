@@ -1,11 +1,22 @@
 var webpack = require('webpack');
-var path = require('path');
+
+/**
+ * Plugin that copies HTML file into the dist folder during webpack build.
+ */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var HtmlWebpackPluginConfig = {
   title: 'Top 100 | The Best Source For Trending Music',
   template: __dirname + '/client/index.ejs'
 };
+
+/**
+ * Bourbon and Bourbon Neat node packages export an array
+ * of file paths to inlude in project. Use with Webpack
+ * sass loader to have all bourbon + neat mixins included globally.
+ */
+var bourbonPaths = require('bourbon').includePaths;
+var neatPaths = require('bourbon-neat').includePaths;
 
 module.exports = {
   entry: [
@@ -46,7 +57,7 @@ module.exports = {
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       },
-      { test: /\.scss?$/, loaders: ["style", "css", "sass"] }
+      { test: /\.scss?$/, loader: 'style!css!sass?sourceMap&includePaths[]=' + bourbonPaths + '&includePaths[]=' + neatPaths[0] + '&includePaths[]=' + neatPaths[1] }
     ]
   },
   plugins: [new HtmlWebpackPlugin(HtmlWebpackPluginConfig), new webpack.HotModuleReplacementPlugin()]
