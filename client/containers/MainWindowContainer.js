@@ -7,7 +7,8 @@ var mapStateToProps = (state) => {
     activeFilter: state.currentFilter,
 		artists: state.artists,
 		albums: state.albums,
-		songs: state.songs
+		songs: state.songs,
+		visibleAlbumsCount: state.visibleAlbums
 	}
 };
 

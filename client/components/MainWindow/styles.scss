@@ -1,2 +1,8 @@
 @import "bourbon";
 @import "client/scss/vars";
+
+.main-window {
+  @include clearfix();
+  position:relative;
+  z-index:1;
+}

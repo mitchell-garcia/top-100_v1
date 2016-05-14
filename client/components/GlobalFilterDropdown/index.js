@@ -1,7 +1,7 @@
 var React = require('react');
 var Redux = require('react-redux');
-var styles = require('./styles.scss');
 var updateFilter = require('actions/updateFilter');
+var styles = require('./styles.scss');
 
 var AVAILABLE = ['Albums', 'Songs'];
 

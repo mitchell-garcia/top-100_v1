@@ -1,11 +1,125 @@
 @import "bourbon";
+@import "client/scss/vars";
 
 .song {
   @include clearfix();
-  padding:5px 0;
+  padding:30px;
+  background:#fff;
+  border-bottom: 1px solid $brand-subtle-gray;
+  width:100%;
+  float:left;
+  position:relative;
+}
+
+.song-number {
+  font-size:24px;
+  font-weight:bold;
+  background:red;
+  color:#fff;
+  font-size:18px;
+  width:35px;
+  border-radius:99px;
+  text-align: center;
+  height:35px;
+  line-height:35px;
+  float:left;
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+
+.song-thumbnail-container {
+  width:15%;
+  padding-bottom:15%;
+  float:left;
+  border-radius:99px;
+  overflow: hidden;
+}
+
+.song-information-container {
+  max-width:80%;
+  margin-top:25px;
+  margin-left:25px;
+  float:left;
 }
 
 .song-name {
   font-size:18px;
+  display:block;
+  font-weight: bold;
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-artist {
+  font-size:16px;
+  display:block;
+  margin-top:5px;
+  color:#666;
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+* Featured song styles
+*/
+.song.song-featured-1 .song-number {
+  width:50px;
+  height:50px;
+  line-height: 50px;
+}
+
+.song.song-featured-1 .song-thumbnail-container {
+  width:50%;
+  padding-bottom:50%;
+  display:block;
+  margin: 0 auto;
+  float:none;
+}
+
+.song.song-featured-1 .song-information-container {
+  max-width: 100%;
+  text-align: center;
+}
+
+.song.song-featured-1 .song-name {
+  margin-top:10px;
+  overflow: visible;
+  white-space: normal;
+  font-size:22px;
+}
+
+/**
+* Song list styles
+*/
+
+.song.song-list {
+  padding:20px;
+}
+
+.song.song-list .song-number {
   float:left;
+  position: relative;
+  width:25px;
+  height: 25px;
+  color:#000;
+  background:#fff;
+  line-height: 25px;
+  top:auto;
+  left:auto;
+}
+
+.song.song-list .song-thumbnail-container {
+  display:none;
+}
+
+.song.song-list .song-information-container {
+  max-width:85%;
+  @include clearfix();
+  margin-top:1px;
+  margin-left:15px;
 }

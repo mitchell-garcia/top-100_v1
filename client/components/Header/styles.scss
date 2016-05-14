@@ -4,6 +4,8 @@
 .header {
   background:#fff;
   @include clearfix();
+  position:relative;
+  z-index:2;
 }
 
 .logo-mark {

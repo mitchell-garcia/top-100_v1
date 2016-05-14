@@ -1,8 +1,8 @@
 var React = require('react');
-var styles = require('./styles.scss');
 
 var GlobalSearch = require('components/GlobalSearch');
 var GlobalFilterDropdown = require('components/GlobalFilterDropdown');
+var styles = require('./styles.scss');
 
 var Header = React.createClass({
 	render() {
