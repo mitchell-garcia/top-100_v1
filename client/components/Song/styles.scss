@@ -1,0 +1,11 @@
+@import "bourbon";
+
+.song {
+  @include clearfix();
+  padding:5px 0;
+}
+
+.song-name {
+  font-size:18px;
+  float:left;
+}

@@ -1,46 +1,24 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Redux = require('react-redux');
+var { Provider } = Redux;
 
-var Header = require('components/Header');
+var Header = require('containers/HeaderContainer');
+var MainWindowContainer = require('containers/MainWindowContainer');
 var Styles = require('scss/style.scss');
-var Albums = require('data/albums');
-var Songs = require('data/songs');
 
-var store = require('state');
-
-Albums.then((success) => {
-	let response = JSON.parse(success);
-	store.dispatch({
-		type: 'DATA_FETCH',
-		data: response,
-		namespace: 'albums'
-	});
-}).catch((e) => {
-	console.log(e);
-});
-
-Songs.then((success) => {
-	let response = JSON.parse(success);
-	store.dispatch({
-		type: 'DATA_FETCH',
-		data: response,
-		namespace: 'songs'
-	});
-}).catch((e) => {
-	console.log(e);
-})
+var store = require('store');
 
 var render = () => ReactDOM.render(
-  <Header 
-  	store={store.getState()} 
-  	onDecrement={
-  		() => store.dispatch({
-  			type: 'CLICK_LOGO',
-  			text: 'OK'
-  		})
-  	}
-	/>,
+  <Provider store={store}>
+		<div className="application">
+			<Header />
+			<MainWindowContainer />
+		</div>
+  </Provider>,
   document.getElementById('application')
 );
 
 render();
+
+require('data/fetchInitialData')(store, render);

@@ -2,5 +2,7 @@
 @import "neat";
 
 .row {
-  @include outer-container();
+  @include outer-container(960px);
+  padding-left:15px;
+  padding-right:15px;
 }

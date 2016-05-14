@@ -1,0 +1,21 @@
+@import "client/scss/vars";
+@import "bourbon";
+
+.global-search {
+  @include transition(150ms ease all);
+  background: #fff;
+  margin: 5px 0;
+  padding: 7px 7px;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  color: #000;
+  width:100%;
+  max-width:265px;
+  float:right;
+}
+
+.global-search:focus {
+  box-shadow: 0 0 10px #ddd;
+  border: 1px solid $brand-green;
+}

@@ -1,0 +1,26 @@
+@import "bourbon";
+@import "client/scss/vars";
+
+.header {
+  background:#fff;
+  @include clearfix();
+}
+
+.logo-mark {
+  padding: 7px 0;
+  float: left;
+}
+
+.logo-mark img {
+  width:20px;
+  height:auto;
+}
+
+.logo-type {
+  float:left;
+  font-size:20px;
+  font-weight:bold;
+  padding-top:10px;
+  margin-left:10px;
+  color:$brand-blue;
+}

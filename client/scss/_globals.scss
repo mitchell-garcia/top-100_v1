@@ -3,9 +3,10 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 body {
-background:$brand-subtle-gray;
+	background:$brand-subtle-gray;
 	margin: 0;
 	font: 16px/1 sans-serif;
+	font-family: "Karla", sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
