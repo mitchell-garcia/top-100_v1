@@ -1,24 +1,23 @@
 /**
- * Note: Boilerplate for future save-settings behavior. 
- * Not currently in use.
+ * Tiny little localstorage proxy
+ * Will catch errors.. Unlike some other ones, that will not be named.
  */
 
 var localStorageAdapter = {
-  saveState(stateObject) {
+  setItem(key, value) {
     try {
-      localStorage.setItem('top100:state', JSON.stringify(stateObject));
+      localStorage.setItem(`top100:${key}`, value);
       return true;
     } catch(e) {
       console.info('Saving settings to local storage failed! If in private mode, this is expected behavior.');
       return true;
     }
   },
-  getSavedState() {
+  getItem(key) {
     try {
-      var state = localStorage.getItem('top100:state');
-      if(state !== '') {
-        state = JSON.parse(state);
-        return state;
+      var item = localStorage.getItem(`top100:${key}`);
+      if(item !== '') {
+        return item;
       } else {
         return false;
       }

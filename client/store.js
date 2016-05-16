@@ -1,5 +1,6 @@
 var Redux = require('redux');
 var _ = require('lodash');
+var localStorageAdapter = require('util/localStorageAdapter');
 
 var { createStore } = Redux;
 
@@ -33,6 +34,7 @@ function reducer(state = [], action) {
 			
 		case 'UPDATE_FILTER' :
 			var { text } = action;
+			localStorageAdapter.setItem('currentFilter', text);
 			return Object.assign({}, state, {
 				currentFilter: text
 			});
@@ -75,9 +77,8 @@ module.exports = Redux.createStore(reducer,
 		Songs: [],
 		
 		// Filter + Search Parameters
-		currentFilter: 'Albums',
+		currentFilter: localStorageAdapter.getItem('currentFilter') ? localStorageAdapter.getItem('currentFilter') : 'Albums',
 		searchQuery: '',
-		searchIn: 'ALL',
 		
 		// UI:Data
 		activeAlbumId: 0,

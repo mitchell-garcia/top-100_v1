@@ -8,6 +8,7 @@ var MainWindowContainer = require('containers/MainWindowContainer');
 var Styles = require('scss/style.scss');
 
 var updateGridSize = require('actions/updateGridSize');
+var updateSearchQuery = require('actions/updateSearchQuery');
 var calculateGridSize = require('util/calculateGridSize');
 
 var store = require('store');
@@ -31,7 +32,14 @@ var updateWindowSize = () => {
   store.dispatch(updateGridSize(calculateGridSize(window.innerWidth)));
 };
 
+var resetSearchOnEsc = (e) => {
+  if(e.keyCode === 27) {
+    store.dispatch(updateSearchQuery(''));
+  }
+}
+
 updateWindowSize();
 window.addEventListener('resize', updateWindowSize);
+window.addEventListener('keyup', resetSearchOnEsc, false);
 
 require('data/fetchInitialData')(store, render);
