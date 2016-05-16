@@ -8,7 +8,8 @@ var mapStateToProps = (state) => {
 		artists: state.artists,
 		isSearching: state.isSearching,
 		Albums: state.Albums,
-		Songs: state.Songs
+		Songs: state.Songs,
+		faves: state.faves
 	}
 };
 

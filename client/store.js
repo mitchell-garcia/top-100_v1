@@ -60,9 +60,23 @@ function reducer(state = [], action) {
 			});
 			
 		case 'VIEW_TO_DEFAULT' :
+			localStorageAdapter.setItem('currentFilter', 'Albums');
 			return Object.assign({}, state, {
 				currentFilter: 'Albums',
 				isViewingAlbumDetails: false
+			});
+			
+		case 'TOGGLE_FAVE_ALBUM' :
+			var { value } = action;
+			var alreadyFaved = state.faves.includes(value);
+			if(alreadyFaved) {
+				var newFaves = state.faves.replace(`,${value}`, '')
+			} else {
+				var newFaves = `${state.faves},${value}`;
+			}
+			localStorageAdapter.setItem('faves', newFaves);
+			return Object.assign({}, state, {
+				faves: newFaves
 			});
 			
 		default:
@@ -90,6 +104,9 @@ module.exports = Redux.createStore(reducer,
 		isLoadingAlbums: true,
 		isLoadingSongs: true,
 		isGlobalFilterDropdownVisible: false,
-		isViewingAlbumDetails: false
+		isViewingAlbumDetails: false,
+		
+		// UI:Features
+		faves: localStorageAdapter.getItem('faves') ? localStorageAdapter.getItem('faves') : ''
 	}
 );
