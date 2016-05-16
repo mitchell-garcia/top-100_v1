@@ -3,7 +3,7 @@ require('./styles.scss');
 
 var Song = React.createClass({
   render() {
-    var { cover, title, thumbnail, number } = this.props;
+    var { cover, title, thumbnail, number, isSearching } = this.props;
     number = number + 1;
     var [name, artist] = title.split('-');
     var conditionalStyles = {
@@ -14,9 +14,16 @@ var Song = React.createClass({
     var layout = isTopTen ? "song song-featured song-featured-" + number : "song song-list";
     return (
       <div className={layout}>
-        <div className="song-number">
-          {number}
-        </div>
+        {
+          (() => {
+            if(!isSearching) {
+              return (
+                <div className="song-number">
+                  {number}
+                </div>
+              ) 
+            }
+          })()}
         <div className="song-thumbnail-container" style={conditionalStyles}>
         </div>
         <div className="song-information-container">

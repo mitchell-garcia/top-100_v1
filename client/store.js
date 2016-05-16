@@ -60,7 +60,6 @@ function reducer(state = [], action) {
 		case 'VIEW_TO_DEFAULT' :
 			return Object.assign({}, state, {
 				currentFilter: 'Albums',
-				isSearching: false,
 				isViewingAlbumDetails: false
 			});
 			
