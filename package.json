@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:watch": "./node_modules/.bin/webpack --watch",
     "dev:serve": "./node_modules/.bin/webpack-dev-server --watch",
-    "dev:build": "./node_modules/.bin/webpack"
+    "dev:build": "./node_modules/.bin/webpack",
+    "production:build" : "./node_modules/.bin/webpack --optimize-minimize"
   },
   "author": "",
   "license": "ISC",
