@@ -1,4 +1,4 @@
-### Top 100
+## Top 100
 
 Simple React webapp that interfaces with the Apple Music API. Allows user to browse through the top 100 albums and songs in a more portable format. Includes:
 
