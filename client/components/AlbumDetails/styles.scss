@@ -183,20 +183,20 @@ a.pure-button-selected {
 
 .album-details-left .album-details-click-to-hide {
   position:absolute;
-  top:10px;
-  right:10px;
+  top:20px;
+  right:20px;
   font-weight:bold;
   font-size:14px;
-  color:lighten($brand-blue, 25%);
+  color:#999;
   cursor: pointer;
 }
 
 .album-details-right .album-details-click-to-hide {
   position:absolute;
-  top:10px;
-  left:10px;
+  top:20px;
+  left:20px;
   font-weight:bold;
   font-size:14px;
-  color:lighten($brand-blue, 25%);
+  color:#999;
   cursor: pointer;
 }

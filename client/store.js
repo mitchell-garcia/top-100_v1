@@ -19,8 +19,9 @@ function reducer(state = [], action) {
 
 		case 'UPDATE_SEARCH_QUERY' :
 			var { query } = action;
+			var isSearching = query !== '';
 			return Object.assign({}, state, {
-				isSearching: true, 
+				isSearching: isSearching,
 				searchQuery: query
 			});
 			
@@ -28,13 +29,6 @@ function reducer(state = [], action) {
 			var { value } = action;
 			return Object.assign({}, state, {
 				isGlobalFilterDropdownVisible: value
-			});
-			
-		case 'UPDATE_NUMBER_OF_VISIBLE_ALBUMS' :
-			var { amount } = action;
-			var newAmount = amount + 10;
-			return Object.assign({}, state, {
-				visibleAlbums: newAmount
 			});
 			
 		case 'UPDATE_FILTER' :
@@ -63,6 +57,13 @@ function reducer(state = [], action) {
 				gridSize: value
 			});
 			
+		case 'VIEW_TO_DEFAULT' :
+			return Object.assign({}, state, {
+				currentFilter: 'Albums',
+				isSearching: false,
+				isViewingAlbumDetails: false
+			});
+			
 		default:
 			return state;
 	}
@@ -76,7 +77,6 @@ module.exports = Redux.createStore(reducer,
 		
 		// Filter + Search Parameters
 		currentFilter: 'Albums',
-		visibleAlbums: 20,
 		searchQuery: '',
 		searchIn: 'ALL',
 		

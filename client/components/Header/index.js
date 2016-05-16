@@ -6,16 +6,18 @@ var styles = require('./styles.scss');
 
 var Header = React.createClass({
 	render() {
+			var { onClickLogo } = this.props; 
 			return (
 			<div className="header">
 				<div className="row">
-					<div className="logo-mark" 
-						onClick={(e) => {
-							this.props.dispatch(reset);
-						}}>
-						<img src={require("brand/mark.svg")} alt="Top 100 Logo" />
+					<div className="logo-mark">
+						<img src={require("brand/mark.svg")} alt="Top 100 Logo" onClick={(e) => {
+							onClickLogo();
+						}}/>
 					</div>
-					<div className="logo-type">
+					<div className="logo-type" onClick={(e) => {
+							onClickLogo();
+						}}>
 						Top 100
 					</div>
 					<GlobalFilterDropdown />

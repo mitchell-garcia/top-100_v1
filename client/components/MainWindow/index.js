@@ -11,6 +11,7 @@ var MainWindow = React.createClass({
 			return (
 			<div className="main-window">
 				<div className={isSongContainer ? "row row-tiny" : "row row-extended"} >
+					{this.props.currentSearch}
 					{
 						(() => {
 							switch (this.props.activeFilter) {

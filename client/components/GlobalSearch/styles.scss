@@ -33,3 +33,22 @@
 .global-search-form:focus {
   background-color:darken(#ddd,3%);
 }
+
+@include media(screen and max-width 490px) {
+  .global-search-container {
+    width:100%;
+    position:fixed;
+    bottom:0;
+    background:#fff;
+    left:0;
+    clear:both;
+    padding:10px;
+  }
+  .global-search-form {
+    width:100%;
+  }
+  .global-search-icon {
+    top:15px;
+    left:25px;
+  }
+}
