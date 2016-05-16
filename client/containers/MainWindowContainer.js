@@ -6,7 +6,7 @@ var mapStateToProps = (state) => {
 		currentSearch: state.searchQuery,
     activeFilter: state.currentFilter,
 		artists: state.artists,
-		isSearching: stete.isSearching,
+		isSearching: state.isSearching,
 		Albums: state.Albums,
 		Songs: state.Songs
 	}

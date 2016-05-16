@@ -1,5 +1,6 @@
 /**
  * Note: Boilerplate for future save-settings behavior. 
+ * Not currently in use.
  */
 
 var localStorageAdapter = {
