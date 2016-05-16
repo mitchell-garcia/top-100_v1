@@ -20,7 +20,17 @@ var MainWindow = React.createClass({
 									}));
 								default:      
 									return (this.props.Albums.map((album, i) => { 
-										return <Album key={i} id={album.id.attributes['im:id']} number={i} title={album.title.label} rights={album.copyright} cover={album['im:image'][2].label} />
+										return <Album key={i} 
+															id={album.id.attributes['im:id']} 
+															number={i} 
+															title={album.title.label} 
+															releaseDate={album['im:releaseDate'].attributes.label} 
+															category={album.category.attributes.label} 
+															rights={album.rights.label} 
+															cover={album['im:image'][2].label}
+															price={album['im:price'].label}
+															link={album.link.attributes.href}
+													/>
 									}));
 							}
 						})()

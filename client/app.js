@@ -24,8 +24,14 @@ var render = () => ReactDOM.render(
 
 render();
 
-window.addEventListener('resize', () => {
+
+// Check screen size initially + add global event listener to resize 
+// when screen size changes
+var updateWindowSize = () => {
   store.dispatch(updateGridSize(calculateGridSize(window.innerWidth)));
-});
+};
+
+updateWindowSize();
+window.addEventListener('resize', updateWindowSize);
 
 require('data/fetchInitialData')(store, render);

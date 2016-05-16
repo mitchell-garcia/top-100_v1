@@ -1,21 +1,37 @@
-@import "client/scss/vars";
 @import "bourbon";
+@import "neat";
+@import "client/scss/vars";
 
-.global-search {
-  @include transition(150ms ease all);
-  background: #fff;
-  margin: 5px 0;
-  padding: 7px 7px;
-  border-radius: 3px;
-  box-shadow: none;
-  border: 1px solid #ddd;
-  color: #000;
-  width:100%;
-  max-width:265px;
+.global-search-container {
   float:right;
+  position:relative;
+  padding-top:4px;
+  padding-bottom:4px;
 }
 
-.global-search:focus {
-  box-shadow: 0 0 10px #ddd;
-  border: 1px solid $brand-green;
+.global-search-form {
+  @include transition(150ms ease all);
+  background-color:#ddd;
+  background-repeat:no-repeat;
+  background-size:10px 6px;
+  border:1px solid $brand-subtle-gray;
+  color:#333;
+  padding:7px 13px 7px 32px;
+  border-radius:3px;
+  position:relative;
+  z-index:1;
+  font-size:14px;
+}
+
+.global-search-icon {
+  position:absolute;
+  top:12px;
+  left: 10px;
+  z-index:99;
+  color:#999;
+  z-index:99;
+}
+
+.global-search-form:focus {
+  background-color:#fff;
 }

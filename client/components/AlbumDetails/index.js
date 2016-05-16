@@ -14,7 +14,10 @@ var mapDispatchToProps = (dispatch) => {
 
 var AlbumDetails = React.createClass({
   hideAlbumDetails(e) {
-    this.props.hideAlbumDetails();
+    // Don't hide the form if user clicks the buy button
+    if(e.target.className !== "album-details-buy-button") {
+      this.props.hideAlbumDetails();
+    }
   },
   componentDidMount: function () {
     window.addEventListener('click', this.hideAlbumDetails, true);
@@ -24,40 +27,34 @@ var AlbumDetails = React.createClass({
       }
     }, false);
   },
-   render() {
-     var { align } = this.props;
-     var containerClassName = `album-details album-details-${align}`;
-     return (
+  render() {
+    var { align } = this.props;
+    var containerClassName = `album-details album-details-${align}`;
+    return (
       <div className={containerClassName}>
-        <div className="album-details-header">
-          <div className="album-details-name">
-            {this.props.name}
-          </div>
-          <div className="album-details-artist">
-            {this.props.artist}
-          </div>
+        <div className="album-details-info-block">
+          <h6 className="album-details-header">Category</h6>
+          <p className="album-details-info-content">{this.props.category}</p>
+        </div>
+        <div className="album-details-info-block">
+          <h6 className="album-details-header">Release Date</h6>
+          <p className="album-details-info-content">{this.props.releaseDate}</p>
+        </div>
+        <div className="album-details-info-block">
+          <h6 className="album-details-header">Price</h6>
+          <p className="album-details-info-content">{this.props.price}</p>
+        </div>
+        <div className="album-details-footer">
           <div className="album-details-buy">
-            <a class="button button-main" href={this.props.link}>Buy Now <i class="fa fa-money" aria-hidden="true"></i></a>
+            <a href={this.props.link} target="_blank" className="album-details-buy-button">
+              Buy Now <i class="fa fa-money" aria-hidden="true"></i>
+            </a>
           </div>
-        </div>
-        <div className="album-details-info-block">
-          <h6 class="albums-details-header">Category</h6>
-          {this.props.category}
-        </div>
-        <div className="album-details-info-block">
-          <h6 class="albums-details-header">Release Date</h6>
-          {this.props.releaseDate}
-        </div>
-        <div className="album-details-info-block">
-          <h6 class="albums-details-header">Price</h6>
-          {this.props.price}
-        </div>
-        <div className="album-details-copyright">
-          {this.props.rights}
+          <p className="album-details-footer-copyright">{this.props.rights}</p>
         </div>
       </div>
     );
-   }
+  }
 });
 
 AlbumDetails = Redux.connect(null, mapDispatchToProps)(AlbumDetails);
