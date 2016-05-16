@@ -47,7 +47,7 @@ module.exports = {
         loader: "babel", 
         query:
           {
-            presets:['react']
+            presets:['react', 'es2015']
           }
       },
       {
