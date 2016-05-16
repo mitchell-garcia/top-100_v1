@@ -6,8 +6,8 @@ var mapStateToProps = (state) => {
 		currentSearch: state.searchQuery,
     activeFilter: state.currentFilter,
 		artists: state.artists,
-		albums: state.albums,
-		songs: state.songs,
+		Albums: state.Albums,
+		Songs: state.Songs,
 		visibleAlbumsCount: state.visibleAlbums
 	}
 };

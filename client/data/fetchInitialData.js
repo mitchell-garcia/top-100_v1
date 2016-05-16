@@ -7,23 +7,23 @@ var albums = require('data/albums');
 var songs = require('data/songs');
 
 module.exports = (store) => {
-  albums.then((success) => {
+  albums().then((success) => {
     let response = JSON.parse(success);
     store.dispatch({
       type: 'DATA_FETCH',
       data: response.feed.entry,
-      namespace: 'albums'
+      namespace: 'Albums'
     });
   }).catch((e) => {
     console.log(e);
   });
   
-  songs.then((success) => {
+  songs().then((success) => {
     let response = JSON.parse(success);
     store.dispatch({
       type: 'DATA_FETCH',
       data: response.feed.entry,
-      namespace: 'songs'
+      namespace: 'Songs'
     });
   }).catch((e) => {
     console.log(e);

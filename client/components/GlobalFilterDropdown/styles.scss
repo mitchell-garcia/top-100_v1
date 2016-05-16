@@ -4,40 +4,59 @@
 .global-filter-dropdown {
   @include transition(150ms ease all);
   float:left;
-  font-weight: bold;
   margin-left:10px;
-  font-size:20px;
-  padding:10px 30px 10px 10px;
-  color:#000;
-  background:#fff;
+  color:#fff;
+  background:darken($brand-blue, 5%);
   border-right: #fafafa;
   position: relative;
   cursor:pointer;
 }
 
+.global-filter-dropdown-current {
+  font-size:20px;
+  font-weight: bold;
+  padding:10px 20px;
+}
+
+.global-filter-dropdown:hover {
+  @include transition(150ms ease all);
+  background:$brand-blue;
+}
+
 .global-filter-dropdown-menu {
-  display: none;
+  @include transition(100ms ease-in opacity);
+  @include transform(scale(0));
+  opacity:0;
+  display: block;
   position: absolute;
   top:100%;
   left:0;
   width:200px;
 }
 
-.global-filter-dropdown-menu li {
+// Droppdown Toggled
+.global-filter-dropdown.show-dropdown {
+  background:$brand-blue;
+  color:#fff;
+}
+
+.global-filter-dropdown.show-dropdown .global-filter-dropdown-menu {
+  @include transform(scale(1));
+  opacity:1;
+  cursor:pointer;
+  display: block;
+  background:$brand-blue;
+  color:#fff;
+}
+
+.global-filter-dropdown .global-filter-dropdown-menu li {
+  @include transition(100ms ease all);
   display:block;
-  border-bottom:1px solid $brand-subtle-gray;
-  padding:5px 30px 5px 10px;
+  padding:10px 20px;
   margin: 0;
   background:$brand-blue;
   color:#fff;
   &:hover {
-    color:$brand-blue;
-    background:#fff;
+    background:lighten($brand-blue, 15%);
   }
-}
-
-.global-filter-dropdown:hover .global-filter-dropdown-menu {
-  cursor:pointer;
-  display: block;
-  background:#fff;
 }

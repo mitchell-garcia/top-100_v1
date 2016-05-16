@@ -1,0 +1,42 @@
+@import "bourbon";
+@import "neat";
+@import "client/scss/vars";
+
+.album-details {
+  display:block;
+  background:$brand-blue;
+  top:0;
+  position:absolute;
+  z-index:1;
+  height: 100%;
+  width:100%;
+  padding:35px;
+}
+
+.album-details-left {  
+  @include animation(slideLeft .5s ease);
+  left:100%;
+}
+
+.album-details-right {  
+  @include animation(slideRight .5s ease);
+  right:100%;
+}
+
+@include keyframes(slideLeft) {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@include keyframes(slideRight) {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}

@@ -1,6 +1,12 @@
 @import "bourbon";
 @import "neat";
 
+.album-container {
+  float:left;
+  padding:15px;
+  position:relative;
+}
+
 .album-art {
   position: relative;
   width: 100%;
@@ -14,16 +20,12 @@
   cursor:pointer;
 }
 
-.album-container {
-  width:20%;
-  float:left;
-  padding:15px;
-}
-
 .album-content {
   display:block;
   text-align:center;
   padding:15px;
+  z-index:99;
+  position:relative;
 }
 
 .album-name {

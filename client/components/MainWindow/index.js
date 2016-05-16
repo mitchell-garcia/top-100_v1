@@ -15,12 +15,12 @@ var MainWindow = React.createClass({
 						(() => {
 							switch (this.props.activeFilter) {
 								case "Songs":   
-									return (this.props.songs.map((song, i) => { 
-										return <Song key={i} number={i} title={song.title.label} cover={song['im:image'][2].label} />
+									return (this.props.Songs.map((song, i) => { 
+										return <Song key={i} id={song.id.attributes['im:id']} number={i} title={song.title.label} cover={song['im:image'][2].label} />
 									}));
 								default:      
-									return (this.props.albums.map((album, i) => { 
-										return <Album key={i} number={i} title={album.title.label} cover={album['im:image'][2].label} />
+									return (this.props.Albums.map((album, i) => { 
+										return <Album key={i} id={album.id.attributes['im:id']} number={i} title={album.title.label} rights={album.copyright} cover={album['im:image'][2].label} />
 									}));
 							}
 						})()
