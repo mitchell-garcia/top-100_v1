@@ -24,7 +24,7 @@ module.exports = (albumsArray, query) => {
   _.map(albumsArray, function(album, key) {
     for(var i = 0; i < SEARCHMAP.length; i++) {
       var { value, key } = SEARCHMAP[i];
-      if(_.get(album[value], key).includes(query)) {
+      if(_.get(album[value], key).toLowerCase().includes(query.toLowerCase())) {
         found.push(album);
       }
     }
