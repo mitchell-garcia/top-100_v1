@@ -11,10 +11,8 @@
 
 .global-search-form {
   @include transition(150ms ease all);
-  background-color:#ddd;
-  background-repeat:no-repeat;
-  background-size:10px 6px;
-  border:1px solid $brand-subtle-gray;
+  background:#ddd;
+  border:0;
   color:#333;
   padding:7px 13px 7px 32px;
   border-radius:3px;
@@ -33,5 +31,5 @@
 }
 
 .global-search-form:focus {
-  background-color:#fff;
+  background-color:darken(#ddd,3%);
 }

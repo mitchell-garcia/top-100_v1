@@ -9,7 +9,10 @@ var Header = React.createClass({
 			return (
 			<div className="header">
 				<div className="row">
-					<div className="logo-mark">
+					<div className="logo-mark" 
+						onClick={(e) => {
+							this.props.dispatch(reset);
+						}}>
 						<img src={require("brand/mark.svg")} alt="Top 100 Logo" />
 					</div>
 					<div className="logo-type">

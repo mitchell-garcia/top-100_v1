@@ -1,4 +1,5 @@
 @import "bourbon";
+@import "neat";
 @import "client/scss/vars";
 
 .global-filter-dropdown {
@@ -58,5 +59,12 @@
   color:#fff;
   &:hover {
     background:lighten($brand-blue, 15%);
+  }
+}
+
+@include media(screen and max-width 490px) {
+  .global-filter-dropdown {
+    float:right;
+    max-width:50%;
   }
 }

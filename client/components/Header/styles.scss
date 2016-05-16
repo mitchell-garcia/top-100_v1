@@ -1,4 +1,5 @@
 @import "bourbon";
+@import "neat";
 @import "client/scss/vars";
 
 .header {
@@ -29,4 +30,11 @@
   padding-top:10px;
   margin-left:10px;
   color:$brand-blue;
+}
+
+@include media(screen and max-width 490px) {
+  .logo-mark {
+    float:left;
+    max-width:50%;
+  }
 }

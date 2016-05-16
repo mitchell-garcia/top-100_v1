@@ -32,6 +32,9 @@ var AlbumDetails = React.createClass({
     var containerClassName = `album-details album-details-${align}`;
     return (
       <div className={containerClassName}>
+        <div className="album-details-click-to-hide">
+          x
+        </div>
         <div className="album-details-info-block">
           <h6 className="album-details-header">Category</h6>
           <p className="album-details-info-content">{this.props.category}</p>
@@ -40,7 +43,7 @@ var AlbumDetails = React.createClass({
           <h6 className="album-details-header">Release Date</h6>
           <p className="album-details-info-content">{this.props.releaseDate}</p>
         </div>
-        <div className="album-details-info-block">
+        <div className="album-details-info-block album-details-info-price">
           <h6 className="album-details-header">Price</h6>
           <p className="album-details-info-content">{this.props.price}</p>
         </div>
