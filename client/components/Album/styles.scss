@@ -3,8 +3,12 @@
 
 .album-container {
   float:left;
-  padding:15px;
   position:relative;
+}
+
+.album-simple-details-container {
+  padding:15px;
+  background:#fff;
 }
 
 .album-art {
@@ -37,7 +41,6 @@
 }
 
 .album-name:hover {
-  text-decoration: underline;
   cursor:pointer;
 }
 

@@ -57,6 +57,12 @@ function reducer(state = [], action) {
 				isViewingAlbumDetails: false
 			});
 			
+		case 'UPDATE_GRID_SIZE' :
+			var { value } = action;
+			return Object.assign({}, state, {
+				gridSize: value
+			});
+			
 		default:
 			return state;
 	}

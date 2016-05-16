@@ -7,6 +7,9 @@ var HeaderContainer = require('containers/HeaderContainer');
 var MainWindowContainer = require('containers/MainWindowContainer');
 var Styles = require('scss/style.scss');
 
+var updateGridSize = require('actions/updateGridSize');
+var calculateGridSize = require('util/calculateGridSize');
+
 var store = require('store');
 
 var render = () => ReactDOM.render(
@@ -20,5 +23,9 @@ var render = () => ReactDOM.render(
 );
 
 render();
+
+window.addEventListener('resize', () => {
+  store.dispatch(updateGridSize(calculateGridSize(window.innerWidth)));
+});
 
 require('data/fetchInitialData')(store, render);

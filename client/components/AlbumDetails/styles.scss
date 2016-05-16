@@ -14,12 +14,12 @@
 }
 
 .album-details-left {  
-  @include animation(slideLeft .5s ease);
+  @include animation(slideLeft .35s ease);
   left:100%;
 }
 
 .album-details-right {  
-  @include animation(slideRight .5s ease);
+  @include animation(slideRight .35s ease);
   right:100%;
 }
 
@@ -34,9 +34,9 @@
 
 @include keyframes(slideRight) {
   0% {
-    left: 0;
+    right: 0;
   }
   100% {
-    left: 100%;
+    right: 100%;
   }
 }

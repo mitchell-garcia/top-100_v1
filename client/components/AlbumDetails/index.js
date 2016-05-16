@@ -18,10 +18,17 @@ var AlbumDetails = React.createClass({
   },
   componentDidMount: function () {
     window.addEventListener('click', this.hideAlbumDetails, true);
+    window.addEventListener('keyup', (e) => {
+      if(e.keyCode === 27) {
+        this.hideAlbumDetails(e);
+      }
+    }, false);
   },
    render() {
+     var { align } = this.props;
+     var containerClassName = `album-details album-details-${align}`;
      return (
-      <div className="album-details">
+      <div className={containerClassName}>
         <div className="album-details-header">
           <div className="album-details-name">
             {this.props.name}
