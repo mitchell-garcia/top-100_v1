@@ -8,7 +8,7 @@
     "dev:watch": "./node_modules/.bin/webpack --watch",
     "dev:serve": "./node_modules/.bin/webpack-dev-server --watch",
     "dev:build": "./node_modules/.bin/webpack",
-    "production:build" : "./node_modules/.bin/webpack --optimize-minimize"
+    "production:build" : "./node_modules/.bin/webpack --optimize-minimize -p"
   },
   "author": "",
   "license": "ISC",

@@ -14,8 +14,6 @@ module.exports = (store) => {
       data: response.feed.entry,
       namespace: 'Albums'
     });
-  }).catch((e) => {
-    console.log(e);
   });
   
   songs().then((success) => {
@@ -25,7 +23,5 @@ module.exports = (store) => {
       data: response.feed.entry,
       namespace: 'Songs'
     });
-  }).catch((e) => {
-    console.log(e);
-  })
+  });
 }

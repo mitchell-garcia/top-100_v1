@@ -24,7 +24,7 @@ module.exports = {
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     __dirname + '/client/app.js' // Your appʼs entry point
   ],
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   resolve: {
     'modulesDirectories' : ['node_modules', 'client', 'assets']
   },

@@ -31,6 +31,7 @@ var MainWindow = React.createClass({
 								switch (activeFilter) {
 									case "Songs":   
 										return (songsDisplay.map((song, i) => { 
+											debugger;
 											return <Song key={i} 
 																isSearching={isSearching} 
 																id={song.id.attributes['im:id']} 
@@ -41,15 +42,15 @@ var MainWindow = React.createClass({
 									default:      
 										return (albumsDisplay.map((album, i) => { 
 											return <Album key={i} 
-																id={album.id.attributes['im:id']} 
+																id={album.id.attributes['im:id'] ? album.id : ''} 
 																number={i} 
-																title={album.title.label} 
-																releaseDate={album['im:releaseDate'].attributes.label} 
-																category={album.category.attributes.label} 
-																rights={album.rights.label} 
-																cover={album['im:image'][2].label}
-																price={album['im:price'].label}
-																link={album.link.attributes.href}
+																title={album.title ? album.title.label : ''} 
+																releaseDate={album['im:releaseDate'].attributes ? album['im:releaseDate'].attributes.label : ''} 
+																category={album.category ? album.category.attributes.label : ''} 
+																rights={album.rights ? album.rights.label : ''}
+																cover={album['im:image'][2] ? album['im:image'][2].label : 'http://placehold.it/500x500'}
+																price={album['im:price'] ? album['im:price'].label : '?.??'}
+																link={album.link ? album.link.attributes.href : ''}
 														/>
 										}));
 								}
